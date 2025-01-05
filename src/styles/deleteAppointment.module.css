@@ -1,21 +1,6 @@
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  text-align: center;
-  color: #4CAF50;
-}
-
 .list {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .listItem {
@@ -23,22 +8,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  margin: 5px 0;
-  background-color: white;
-  border: 1px solid #ddd;
+  border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.listItem strong {
-  color: #333;
+  margin-bottom: 10px;
 }
 
 .deleteButton {
   background-color: #f44336;
   color: white;
-  padding: 5px 10px;
   border: none;
   border-radius: 5px;
+  padding: 5px 10px;
+  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -47,8 +28,14 @@
   background-color: #d32f2f;
 }
 
-.error {
-  text-align: center;
+.successMessage {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.errorMessage {
   color: #f44336;
   font-weight: bold;
+  margin-bottom: 20px;
 }

@@ -1,0 +1,60 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-size: 3rem; /* Başlığı büyüttüm */
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 30px; /* Başlık altındaki mesafeyi artırdım */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.title:hover {
+  color: #388E3C;
+  transform: scale(1.1);
+}
+
+.description {
+  font-size: 1.3rem; /* Açıklamayı biraz büyüttüm */
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.listItem {
+  margin: 20px 0; /* Aralarındaki mesafeyi artırdım */
+}
+
+.listItem a {
+  display: inline-block;
+  font-size: 1.8rem; /* Butonları büyüttüm */
+  font-weight: bold;
+  color: #4CAF50;
+  text-decoration: none;
+  padding: 15px 30px; /* Buton iç dolgusunu artırdım */
+  border: 3px solid #4CAF50; /* Buton kenarlarını biraz kalınlaştırdım */
+  border-radius: 8px; /* Kenarları daha yuvarlak yaptım */
+  width: 300px; /* Tüm butonlar için sabit genişlik */
+  text-align: center; /* Metni ortaladım */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.listItem a:hover {
+  background-color: #4CAF50;
+  color: white;
+  transform: scale(1.1); /* Hover sırasında buton büyüyor */
+}
+
+.customHr {
+  margin: 30px 0; /* Çizgi üst-alt mesafesini artırdım */
+  border: none;
+  border-top: 2px solid #ddd;
+}

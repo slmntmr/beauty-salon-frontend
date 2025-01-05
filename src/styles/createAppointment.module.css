@@ -5,11 +5,12 @@
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out; /* Form giriş animasyonu */
 }
 
 .title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #4CAF50;
   margin-bottom: 20px;
@@ -18,7 +19,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px; /* Aradaki boşlukları daha belirgin hale getirdik */
 }
 
 .formGroup {
@@ -28,37 +29,40 @@
 
 .formGroup label {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Label ile input arasındaki boşluğu artırdık */
   color: #333;
 }
 
 .formGroup input {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  background-color: #fff;
+  transition: all 0.3s ease;
 }
 
 .formGroup input:focus {
   outline: none;
   border-color: #4CAF50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Daha belirgin bir odak efekti */
 }
 
 .submitButton {
-  padding: 10px;
-  font-size: 1rem;
+  padding: 12px;
+  font-size: 1.1rem;
   font-weight: bold;
   background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .submitButton:hover {
   background-color: #45a049;
+  transform: translateY(-2px); /* Hover sırasında hafif bir yukarı hareket */
 }
 
 .submitButton:disabled {
@@ -71,6 +75,7 @@
   text-align: center;
   color: #4CAF50;
   font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out; /* Başarı mesajı için giriş animasyonu */
 }
 
 .errorMessage {
@@ -78,4 +83,17 @@
   text-align: center;
   color: #f44336;
   font-weight: bold;
+  animation: fadeIn 0.5s ease-in-out; /* Hata mesajı için giriş animasyonu */
+}
+
+/* Fade-in animasyonu */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

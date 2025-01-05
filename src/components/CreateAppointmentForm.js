@@ -1,4 +1,4 @@
-"use client"; // Client Component olduğunu belirtir
+"use client";
 
 import { useState } from "react";
 import styles from "@/styles/createAppointment.module.css";
@@ -26,12 +26,25 @@ export default function CreateAppointmentForm() {
     setIsSubmitting(true);
     setSuccessMessage("");
     setErrorMessage("");
+
+    if (!formData.customerName || !formData.appointmentDate || !formData.phoneNumber || !formData.salonServiceName) {
+      setErrorMessage("Lütfen tüm alanları doldurunuz.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const dataToSend = {
+      customerName: formData.customerName,
+      appointmentDate: formData.appointmentDate,
+      phoneNumber: formData.phoneNumber,
+      salonServiceName: formData.salonServiceName,
+    };
+
     try {
-      const response = await createAppointmentService(formData);
-      setSuccessMessage("Randevunuz başarıyla oluşturuldu!");
-      console.log(response);
+      const responseMessage = await createAppointmentService(dataToSend);
+      setSuccessMessage(responseMessage);
     } catch (error) {
-      setErrorMessage(error.message || "Bir hata oluştu.");
+      setErrorMessage(error.message);
     } finally {
       setIsSubmitting(false);
     }
@@ -57,7 +70,7 @@ export default function CreateAppointmentForm() {
         <div className={styles.formGroup}>
           <label htmlFor="appointmentDate">Randevu Tarihi</label>
           <input
-            type="datetime-local"
+            type="date"
             id="appointmentDate"
             name="appointmentDate"
             value={formData.appointmentDate}
@@ -72,7 +85,7 @@ export default function CreateAppointmentForm() {
             type="tel"
             id="phoneNumber"
             name="phoneNumber"
-            placeholder="05xx xxx xx xx"
+            placeholder="Telefon numaranızı girin"
             value={formData.phoneNumber}
             onChange={handleInputChange}
             required

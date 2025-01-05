@@ -6,16 +6,14 @@ export default async function createAppointmentService(data) {
       body: JSON.stringify(data),
     });
 
+    const responseData = await response.json();
+
     if (!response.ok) {
-      // Hata durumunda mesaj döndür
-      const errorData = await response.json();
-      throw new Error(errorData.message || "Randevu oluşturulamadı!");
+      throw new Error(responseData.error || "Randevu oluşturulamadı!");
     }
 
-    // Başarılı yanıtı döndür
-    return await response.json();
+    return responseData.message; // Başarı mesajını döndür
   } catch (error) {
-    // Hata durumunda hatayı fırlat
     throw new Error(error.message);
   }
 }
